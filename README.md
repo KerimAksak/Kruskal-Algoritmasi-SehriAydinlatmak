@@ -52,5 +52,7 @@ Giriş dosyası formatı:
 3 5
 
 4 6
+
 Toplam maliyet = 39 AOA Lirası
+
 Toplam kazanç = 50 AOA Lirası
