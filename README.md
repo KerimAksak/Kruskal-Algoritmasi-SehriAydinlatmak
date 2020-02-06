@@ -1,39 +1,56 @@
-# Kruskal Algoritması - Şehri Aydınlatmak
+# Kruskal AlgoritmasÄ± - Åehri AydÄ±nlatmak
 
-### Problem tanımı:
+### Problem tanÄ±mÄ±:
 -------------
-Ekonomik kriz birçok ülkeyi etkilemiş durumda ve AOA ülkesi de bu ülkelerden biridir. Bu nedenle, AOA hükümeti giderleri azaltmak için cadde ışıklandırmalarını optimize etmeye karar verdi. Şimdiye kadar tüm caddelerin bütün ışıkları geceleri açık tutulurdu, maliyeti ise 1 km için 1 AOA lirasıdır. Hükümet bazı ışıkları kapatmaya karar veriyor, ancak yine de güvenli ve huzurlu bir ortam oluşturmak istiyor. Bu güvenlik ortamının bozulmadan tasarruf sağlanabilmesi için herhangi bir kavşaktan bir diğer kavşağa gitmek için mutlaka en az bir tane bütün ışıkları açık olan bir yol (bu yol en kestirme yol olmasa bile) bulunmalıdır. Yollar bir veya daha fazla caddeden oluşabilir. (Kavşaklar caddeleri birbirine bağlar ve caddeler çift şeritlidir, bu yüzden arabalar aynı cadde üzerinden gidiş-geliş yapabilirler.
+Ekonomik kriz birÃ§ok Ã¼lkeyi etkilemiÅŸ durumda ve AOA Ã¼lkesi de bu Ã¼lkelerden biridir. Bu nedenle, AOA hÃ¼kÃ¼meti giderleri azaltmak iÃ§in cadde Ä±ÅŸÄ±klandÄ±rmalarÄ±nÄ± optimize etmeye karar verdi. Åimdiye kadar tÃ¼m caddelerin bÃ¼tÃ¼n Ä±ÅŸÄ±klarÄ± geceleri aÃ§Ä±k tutulurdu, maliyeti ise 1 km iÃ§in 1 AOA lirasÄ±dÄ±r. HÃ¼kÃ¼met bazÄ± Ä±ÅŸÄ±klarÄ± kapatmaya karar veriyor, ancak yine de gÃ¼venli ve huzurlu bir ortam oluÅŸturmak istiyor. Bu gÃ¼venlik ortamÄ±nÄ±n bozulmadan tasarruf saÄŸlanabilmesi iÃ§in herhangi bir kavÅŸaktan bir diÄŸer kavÅŸaÄŸa gitmek iÃ§in mutlaka en az bir tane bÃ¼tÃ¼n Ä±ÅŸÄ±klarÄ± aÃ§Ä±k olan bir yol (bu yol en kestirme yol olmasa bile) bulunmalÄ±dÄ±r. Yollar bir veya daha fazla caddeden oluÅŸabilir. (KavÅŸaklar caddeleri birbirine baÄŸlar ve caddeler Ã§ift ÅŸeritlidir, bu yÃ¼zden arabalar aynÄ± cadde Ã¼zerinden gidiÅŸ-geliÅŸ yapabilirler.
 
-Size, AOA ülkesindeki bazı şehirlere ait, kavşaklar ve aralarındaki caddenin uzunluğunu kilometre cinsinden gösteren bir şehir planı verilecektir. Hükümetin kısıtlarını da göz önünde bulundurarak, bir gün içinde maksimum kaç AOA Lirası tasarruf edilebilir?
+Size, AOA Ã¼lkesindeki bazÄ± ÅŸehirlere ait, kavÅŸaklar ve aralarÄ±ndaki caddenin uzunluÄŸunu kilometre cinsinden gÃ¶steren bir ÅŸehir planÄ± verilecektir. HÃ¼kÃ¼metin kÄ±sÄ±tlarÄ±nÄ± da gÃ¶z Ã¶nÃ¼nde bulundurarak, bir gÃ¼n iÃ§inde maksimum kaÃ§ AOA LirasÄ± tasarruf edilebilir?
 
-### Şehir planı dosyası formatı:
+### Åehir planÄ± dosyasÄ± formatÄ±:
 -------------
 
-Bir şehir m tane kavşaktan ve n tane caddeden oluşmaktadır. Size “cityplan.txt” adında bir giriş dosyası verilecektir. Giriş dosyasının ilk satırı sırasıyla m ve n değerlerini göstermektedir. Sonraki satırlar ise mi. ve mj. kavşaklarını ve bu kavşaklar arasındaki caddenin uzunluğunu gösterir (i != j).
+Bir ÅŸehir m tane kavÅŸaktan ve n tane caddeden oluÅŸmaktadÄ±r. Size â€œcityplan.txtâ€ adÄ±nda bir giriÅŸ dosyasÄ± verilecektir. GiriÅŸ dosyasÄ±nÄ±n ilk satÄ±rÄ± sÄ±rasÄ±yla m ve n deÄŸerlerini gÃ¶stermektedir. Sonraki satÄ±rlar ise mi. ve mj. kavÅŸaklarÄ±nÄ± ve bu kavÅŸaklar arasÄ±ndaki caddenin uzunluÄŸunu gÃ¶sterir (i != j).
 
-Çıktı olarak, ışıklı caddeleri bağlandıkları kavşaklarla temsil edecek şekilde yazdırınız. Ayrıca toplama maliyeti ve toplam kaç AOA lirası tasarruf edildiğini yazdırınız.
+Ã‡Ä±ktÄ± olarak, Ä±ÅŸÄ±klÄ± caddeleri baÄŸlandÄ±klarÄ± kavÅŸaklarla temsil edecek ÅŸekilde yazdÄ±rÄ±nÄ±z. AyrÄ±ca toplama maliyeti ve toplam kaÃ§ AOA lirasÄ± tasarruf edildiÄŸini yazdÄ±rÄ±nÄ±z.
 
-(Tab ile ayırılmıştır)
-Giriş dosyası formatı: 
+(Tab ile ayÄ±rÄ±lmÄ±ÅŸtÄ±r)
+GiriÅŸ dosyasÄ± formatÄ±: 
 7 11
+
 0 1 7 
+
 0 3 5
+
 1 2 8
+
 1 3 9 
+
 1 4 7
+
 2 4 5 
+
 3 4 15 
+
 3 5 6 
+
 4 5 8
+
 4 6 9
+
 5 6 10
 
-Çıktı formatı: 
+
+Ã‡Ä±ktÄ± formatÄ±: 
 0 1 
+
 0 3 
+
 1 4 
+
 2 4 
+
 3 5
+
 4 6
-Toplam maliyet = 39 AOA Lirası
-Toplam kazanç = 50 AOA Lirası
+Toplam maliyet = 39 AOA LirasÄ±
+Toplam kazanÃ§ = 50 AOA LirasÄ±
